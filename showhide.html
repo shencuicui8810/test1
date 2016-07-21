@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示隐藏</title>
+	<style>
+		div{width: 400px;height: 300px;background: #f40;display: none;}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('btn1');
+			var oDiv=document.getElementById('div1');
+			oBtn.onclick=function(){
+				function getStyle(obj,name){
+					if(obj.currentStyle){
+						return obj.currentStyle[name];
+					}else{
+						return getComputedStyle(obj,false)[name];
+					}
+				}
+				if(getStyle(oDiv,'display')=='none'){
+					oDiv.style.display='block';
+				}else{
+					oDiv.style.display='none';
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn1">
+	<div id="div1"></div>
+</body>
+</html>

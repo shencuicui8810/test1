@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简易城市选择器</title>
+	<style>
+		div{width: 400px;height: 400px;background: #ccc;display: none;}
+	</style>
+	<script>
+		window.onload=function(){
+			var oTxt1=document.getElementById('txt1');
+			var oBtn1=document.getElementById('btn1');
+			var oHb=document.getElementById('hb');
+			var oBj=document.getElementById('bj');
+			var oSh=document.getElementById('sh');
+			var oAh=document.getElementById('ah');
+			var oHn=document.getElementById('hn');
+
+			oBtn1.onclick=function(){
+				oHb.style.display='none';
+				oBj.style.display='none';
+				oSh.style.display='none';
+				oAh.style.display='none';
+				oHn.style.display='none';
+				if(oTxt1.value=='河北'){
+					oHb.style.display='block';
+				}
+				else if(oTxt1.value=='北京'){
+					oBj.style.display='block';
+				}
+				else if(oTxt1.value=='上海'){
+					oSh.style.display='block';
+				}
+				else if(oTxt1.value=='安徽'){
+					oAh.style.display='block';
+				}
+				else if(oTxt1.value=='河南'){
+					oHn.style.display='block';
+				}
+				else{
+					alert('亲，你住在地球吗？');
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="button" value="确定" id="btn1">
+	<div id="hb">唐山</div>
+	<div id="bj">丰台</div>
+	<div id="sh">松江</div>
+	<div id="ah">合肥</div>
+	<div id="hn">郑州</div>
+</body>
+</html>
